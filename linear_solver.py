@@ -9,9 +9,7 @@ def Simplex(variables, constraints, maxIterations = 300):
     # usefull variables describing the prolem
     nVar = len(variables)
     nConst = len(constraints)
-
     rows = nConst + 1
-    cols = nVar + nConst + 2
 
     # building tableau in standard form
     tableau, artificials = StandardForm(variables, constraints)
@@ -69,9 +67,6 @@ def Simplex(variables, constraints, maxIterations = 300):
         
         # Cleaning pivot
         tableau[pivotRowIndex] /= pivot
-
-        # Current solution found in tableau (Partial optimal)
-        partial = tableau[:, -1]
         
         # Check iterations over the max number to prevent
         # degeneration of the solution

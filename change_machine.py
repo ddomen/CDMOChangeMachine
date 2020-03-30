@@ -21,7 +21,6 @@ def ChangeMachine(storage, change):
     # Storage informations
     sizes = tuple(storage.keys())
     numSizes = len(sizes)
-    coins = tuple(storage.values())
 
     # Building up Change Problem
     variables = list(sizes) # (1.0)
